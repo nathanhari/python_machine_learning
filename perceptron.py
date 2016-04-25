@@ -48,6 +48,4 @@ class Perceptron:
     if self.weights_ == None:
       return(None)
     else:
-      return(np.where(np.dot(X, self.weights_[1:]) + self.weights_[0] < 0, 
-                        -1, 
-                        1))
+      return(np.where(np.dot(X, self.weights_[1:]) + self.weights_[0] < 0, -1, 1))
