@@ -44,8 +44,11 @@ class Perceptron:
     
     return error_counts
   
+  def net_output(self, X):
+    return(np.dot(X, self.weights_[1:]) + self.weights_[0])
+  
   def predict(self, X):
     if self.weights_ == None:
       return(None)
     else:
-      return(np.where(np.dot(X, self.weights_[1:]) + self.weights_[0] < 0, -1, 1))
+      return(np.where(self.net_output(X) < 0, -1, 1))
